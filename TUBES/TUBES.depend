@@ -2,3 +2,14 @@
 1765285533 source:d:\kuliahan danis\semester 3\struktur data\project std\tubes\menu.cpp
 	<iostream>
 
+1765632871 source:d:\kuliahan danis\semester 3\struktur data\project std\tubes\main.cpp
+	<iostream>
+	"parent.h"
+
+1765632554 d:\kuliahan danis\semester 3\struktur data\project std\tubes\parent.h
+	"child.h"
+
+1765634384 d:\kuliahan danis\semester 3\struktur data\project std\tubes\child.h
+	<iostream>
+	<string>
+

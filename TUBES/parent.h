@@ -29,5 +29,6 @@ void addModulToKursus(List &L, string kodeKursus, adr_modul C);
 void showModulByKursus(List L, string kodeKursus);
 void deleteModul(List &L, string kodeKursus, string judulModul);
 void showAllData(List L);
-
+int countModul(List L, string kodeKursus);
+void showJumModul(List L);
 #endif

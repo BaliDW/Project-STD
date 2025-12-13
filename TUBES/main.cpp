@@ -16,6 +16,8 @@ int main() {
         cout << "3. Tampilkan Semua" << endl;
         cout << "4. Hapus Modul" << endl;
         cout << "5. Hapus Kursus" << endl;
+        cout << "6. Cari Kursus & Hitung Modul (Poin i)" << endl; 
+        cout << "7. Statistik Terbanyak/Tersedikit (Poin j)" << endl;
         cout << "0. Keluar" << endl;
         cout << "Pilihan: ";
         cin >> pilihan;
@@ -46,13 +48,27 @@ int main() {
             cout << "Kode Kursus Hapus: "; getline(cin, target_kode);
             deleteKursus(L, target_kode);
             break;
+        case 6:
+            cout << "Masukkan Kode Kursus: "; getline(cin, target_kode);
+            {
+                int jumlah = countModul(L, target_kode);
+                cout << "Jumlah modul dalam kursus " << target_kode 
+                     << " adalah: " << jumlah << endl;
+            }
+            break;
+
+        case 7:
+            showJumModul(L);
+            break;
+
         case 0:
             cout << "Keluar program." << endl;
             break;
         default:
             cout << "Pilihan salah." << endl;
         }
-    };
-
     return 0;
-}
+};
+
+    
+

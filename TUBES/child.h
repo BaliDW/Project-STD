@@ -17,5 +17,5 @@ struct elm_modul {
     adr_modul next;
     adr_modul prev;
 };
-adr_modul newElementModul(string judul, string durasi, string diff);
+adr_modul newElementModul(string judul, string durasi, string kesulitan);
 #endif

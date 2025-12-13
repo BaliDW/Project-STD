@@ -1,12 +1,12 @@
 #include "child.h"
 
-adr_modul newElementModul(string judul, string durasi, string diff) {
+adr_modul newElementModul(string judul, string durasi, string kesulitan) {
 // I.S. -
 // F.S. Terbentuk node modul baru dengan info yang diberikan
     adr_modul P = new elm_modul;
     P->info.judul = judul;
     P->info.durasi = durasi;
-    P->info.difficulty = diff;
+    P->info.difficulty = kesulitan;
     P->next = nullptr;
     P->prev = nullptr;
     return P;

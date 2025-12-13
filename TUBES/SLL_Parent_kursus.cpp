@@ -27,8 +27,9 @@ void insertKursus(List &L, adr_kursus P) {
         L.first = P;
     }
 }
+
 adr_kursus searchKursus(List L, string kodeKursus) {
-// I.S. L terdefinisi
+// I.S. L terdefinisi, kodekursus berisi kode kursus
 // F.S. Mengembalikan address jika ketemu, NULL jika tidak 
     adr_kursus P = L.first;
     adr_kursus foundP = nullptr;
@@ -117,10 +118,73 @@ void deleteModul(List &L, string kodeKursus, string judulModul) {
                 C = C->next;
             }
         }
-        if (!found) cout << "Modul tidak ditemukan." << endl;
+        if (!found) {
+            cout << "Modul tidak ditemukan." << endl;
+        }
     }
 }
+int countModul(List L, string kodeKursus) {
+// I.S. L terdefinisi, kodeKursus ada atau tidak
+// F.S. Mengembalikan integer jumlah modul
+    adr_kursus P = searchKursus(L, kodeKursus);
+    int jum = 0;
 
+    if (P != nullptr) {
+        adr_modul Q = P->firstModul;
+        while (Q != nullptr) {
+            jum++;
+            Q = Q->next;
+        }
+    }
+    return jum;
+}
+void showJumModul(List L) {
+// I.S. L terdefinisi
+// F.S. Menampilkan nama kursus dengan modul terbanyak dan tersedikit
+    if (L.first == nullptr) {
+        cout << "Data Kursus masih kosong." << endl;
+    } else {
+        adr_kursus P = L.first;
+        
+        adr_kursus maxP = P;
+        adr_kursus minP = P;
+        
+        int maxJum = 0; 
+        int minJum = 0;
+        
+        adr_modul Q = P->firstModul;
+        while(Q != nullptr) { maxJum++; Q = Q->next; }
+        minJum = maxJum;
+
+        P = P->next;
+        
+        while (P != nullptr) {
+            int currentJum = 0;
+            Q = P->firstModul;
+            while(Q != nullptr) { 
+                currentJum++; 
+                Q = Q->next; 
+            }
+
+            if (currentJum > maxJum) {
+                maxJum = currentJum;
+                maxP = P;
+            }
+            if (currentJum < minJum) {
+                minJum = currentJum;
+                minP = P;
+            }
+            
+            P = P->next;
+        }
+
+        cout << "=== STATISTIK KURSUS ===" << endl;
+        cout << "Modul Terbanyak  : " << maxP->info.namaKursus 
+             << " (" << maxJum << " modul)" << endl;
+        cout << "Modul Tersedikit : " << minP->info.namaKursus 
+             << " (" << minJum << " modul)" << endl;
+    }
+}
 void deleteKursus(List &L, string kodeKursus) {
 // I.S. L terdefinisi
 // F.S. Node dengan kodeKursus dihapus dari List
