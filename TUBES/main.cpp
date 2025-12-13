@@ -52,8 +52,7 @@ int main() {
             cout << "Masukkan Kode Kursus: "; getline(cin, target_kode);
             {
                 int jumlah = countModul(L, target_kode);
-                cout << "Jumlah modul dalam kursus " << target_kode
-                     << " adalah: " << jumlah << endl;
+                cout << "Jumlah modul dalam kursus " << target_kode << " adalah: " << jumlah << endl;
             }
             break;
 
