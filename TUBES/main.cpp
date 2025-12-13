@@ -6,22 +6,22 @@ using namespace std;
 int main() {
     List L;
     createList(L);
-    int pilihan;
+    int pilihan = -1;
     string k_nama, k_kode, m_judul, m_durasi, m_diff, target_kode;
 
      while (pilihan != 0) {
         cout << "\n=== APLIKASI KURSUS (TUBES STD) ===" << endl;
-        cout << "1. Tambah Kursus (Insert First)" << endl;
-        cout << "2. Tambah Modul (Insert Last)" << endl;
+        cout << "1. Tambah Kursus " << endl;
+        cout << "2. Tambah Modul " << endl;
         cout << "3. Tampilkan Semua" << endl;
         cout << "4. Hapus Modul" << endl;
         cout << "5. Hapus Kursus" << endl;
-        cout << "6. Cari Kursus & Hitung Modul (Poin i)" << endl; 
-        cout << "7. Statistik Terbanyak/Tersedikit (Poin j)" << endl;
+        cout << "6. Cari Kursus & Hitung Modul " << endl;
+        cout << "7. Statistik Terbanyak/Tersedikit " << endl;
         cout << "0. Keluar" << endl;
         cout << "Pilihan: ";
         cin >> pilihan;
-        cin.ignore(); 
+        cin.ignore();
 
         switch (pilihan) {
         case 1:
@@ -52,7 +52,7 @@ int main() {
             cout << "Masukkan Kode Kursus: "; getline(cin, target_kode);
             {
                 int jumlah = countModul(L, target_kode);
-                cout << "Jumlah modul dalam kursus " << target_kode 
+                cout << "Jumlah modul dalam kursus " << target_kode
                      << " adalah: " << jumlah << endl;
             }
             break;
@@ -67,8 +67,10 @@ int main() {
         default:
             cout << "Pilihan salah." << endl;
         }
+
+    }
     return 0;
 };
 
-    
+
 
