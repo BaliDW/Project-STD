@@ -223,13 +223,16 @@ void showAllData(List L) {
         cout << "Data Kosong." << endl;
     }
     while (P != nullptr) {
+        cout << "--------------------------------" << endl;
         cout << "[" << P->info.kodeKursus << "] " << P->info.namaKursus << endl;
         adr_modul Q = P->firstModul;
         while (Q != nullptr) {
             cout << "   -> " << Q->info.judul << " (" << Q->info.difficulty << ")" << endl;
             Q = Q->next;
         }
-        cout << "--------------------------------" << endl;
         P = P->next;
+        if (P == nullptr){
+            cout << "--------------------------------" << endl;
+        }
     }
 }

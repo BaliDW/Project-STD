@@ -25,37 +25,50 @@ int main() {
 
         switch (pilihan) {
         case 1:
-            cout << "Nama Kursus: ";  
-            cout << "Kode Kursus: ";  
+            cout << "Nama Kursus: ";
+            cin >> k_nama;  
+            cout << "Kode Kursus: ";
+            cin >> k_kode;  
             insertKursus(L, newElementKursus(k_nama, k_kode));
             break;
         case 2:
-            cout << "Kode Kursus Target: ";  
-            cout << "Judul Modul: ";  
-            cout << "Durasi: ";  
-            cout << "Difficulty: ";  
-            addModulToKursus(L, target_kode, newElementModul(m_judul, m_durasi, m_diff));
+            cout << "Kode Kursus Target: ";
+            cin >> target_kode;
+            if (searchKursus(L, target_kode) != nullptr) {
+                cout << "Judul_Modul (Tanpa Spasi): ";
+                cin >> m_judul;
+                cout << "Durasi: ";
+                cin >> m_durasi;
+                cout << "Difficulty: ";
+                cin >> m_diff;
+                addModulToKursus(L, target_kode, newElementModul(m_judul, m_durasi, m_diff));
+            } else {
+                cout << "Error: Kursus tidak ditemukan!" << endl;
+            }
             break;
         case 3:
             showAllData(L);
             break;
         case 4:
-            cout << "Kode Kursus: ";  
-            cout << "Judul Modul Hapus: ";  
+            showAllData(L);
+            cout << "Kode Kursus: ";
+            cin >> target_kode;
+            cout << "Judul Modul Hapus: ";
+            cin >> m_judul;
             deleteModul(L, target_kode, m_judul);
             break;
         case 5:
-            cout << "Kode Kursus Hapus: ";  
+            showAllData(L);
+            cout << "Kode Kursus Hapus: ";
+            cin >> target_kode;
             deleteKursus(L, target_kode);
             break;
         case 6:
-            cout << "Masukkan Kode Kursus: ";  
-            {
-                int jumlah = countModul(L, target_kode);
-                cout << "Jumlah modul dalam kursus " << target_kode << " adalah: " << jumlah << endl;
-            }
+            showAllData(L);
+            cout << "Masukkan Kode Kursus: ";
+            cin >> target_kode;
+            cout << "Jumlah modul: " << countModul(L, target_kode) << endl;
             break;
-
         case 7:
             showJumModul(L);
             break;
