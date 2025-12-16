@@ -25,31 +25,31 @@ int main() {
 
         switch (pilihan) {
         case 1:
-            cout << "Nama Kursus: "; getline(cin, k_nama);
-            cout << "Kode Kursus: "; getline(cin, k_kode);
+            cout << "Nama Kursus: ";  
+            cout << "Kode Kursus: ";  
             insertKursus(L, newElementKursus(k_nama, k_kode));
             break;
         case 2:
-            cout << "Kode Kursus Target: "; getline(cin, target_kode);
-            cout << "Judul Modul: "; getline(cin, m_judul);
-            cout << "Durasi: "; getline(cin, m_durasi);
-            cout << "Difficulty: "; getline(cin, m_diff);
+            cout << "Kode Kursus Target: ";  
+            cout << "Judul Modul: ";  
+            cout << "Durasi: ";  
+            cout << "Difficulty: ";  
             addModulToKursus(L, target_kode, newElementModul(m_judul, m_durasi, m_diff));
             break;
         case 3:
             showAllData(L);
             break;
         case 4:
-            cout << "Kode Kursus: "; getline(cin, target_kode);
-            cout << "Judul Modul Hapus: "; getline(cin, m_judul);
+            cout << "Kode Kursus: ";  
+            cout << "Judul Modul Hapus: ";  
             deleteModul(L, target_kode, m_judul);
             break;
         case 5:
-            cout << "Kode Kursus Hapus: "; getline(cin, target_kode);
+            cout << "Kode Kursus Hapus: ";  
             deleteKursus(L, target_kode);
             break;
         case 6:
-            cout << "Masukkan Kode Kursus: "; getline(cin, target_kode);
+            cout << "Masukkan Kode Kursus: ";  
             {
                 int jumlah = countModul(L, target_kode);
                 cout << "Jumlah modul dalam kursus " << target_kode << " adalah: " << jumlah << endl;
